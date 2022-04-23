@@ -31,4 +31,12 @@ public class UserSteps {
         get.validateDataDetailUser();
     }
 
+    @Given("I set GET api endpoints list user")
+    public void iSetGETApiEndpointsListUser() {
+        get.SetGETApiEndpointsListUser();
+    }
+
+    @And("I receive valid data for list user")
+    public void iReceiveValidDataForListUser() {
+    }
 }
