@@ -23,11 +23,12 @@ jobs:
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots package
 
-  test: API Testing Automation
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v3
-        - name: Run automation api with maven
-          run: mvn clean verify
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run automation api with maven
+        run: mvn clean verify
 
