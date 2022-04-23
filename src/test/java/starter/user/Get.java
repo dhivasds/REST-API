@@ -32,5 +32,15 @@ public class Get {
         restAssuredThat(response -> response.body("'data'.'last_name'", equalTo("Bluth")));
     }
 
+    @Step("I set GET api endpoints list user")
+    public String SetGETApiEndpointsListUser() {
+        return url + "users?page=1";
+    }
+
+    @Step("I receive valid data for list user")
+    public void ReceiveValidDataForListUser() {
+        restAssuredThat(response -> response.body("'data'.'id'", equalTo(1)));
+        restAssuredThat(response -> response.body("'data'.'email'", equalTo("george.bluth@reqres.in")));
+    }
 
 }

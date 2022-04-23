@@ -5,3 +5,9 @@ Feature: User As an admin I want to see list of user So that I can create new us
     When I send GET HTTP request
     Then I receive valid HTTP response code 200
     And I receive valid data for detail user
+
+  Scenario: As a admin I have be able to see List Users - GET
+    Given I set GET api endpoints list user
+    When I send GET HTTP request
+    Then I receive valid HTTP response code 200
+    And I receive valid data for list user
